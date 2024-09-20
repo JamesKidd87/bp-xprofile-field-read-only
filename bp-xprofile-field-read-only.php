@@ -324,7 +324,7 @@ final class BP_XProfile_Field_Read_Only {
 		$editing = bp_is_user_profile_edit() || ( is_admin() && isset( $_GET['page'] ) && 'bp-profile-edit' === $_GET['page'] );
 
 		// Bail when user is admin
-		if ( current_user_can( 'bp_xprofile_field_read_only_moderate' ) )
+		if ( current_user_can( 'bp_xprofile_field_read_only_moderate' ) || is_admin() )
 			return $groups;
 
 		// Walk profile groups
